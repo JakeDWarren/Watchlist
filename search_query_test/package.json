@@ -13,6 +13,8 @@
   "author": "lufinkey",
   "license": "ISC",
   "dependencies": {
-    "justwatch-api": "^1.0.4"
+    "express": "^4.16.4",
+    "justwatch-api": "^1.0.4",
+    "mongoose": "^5.3.2"
   }
 }
