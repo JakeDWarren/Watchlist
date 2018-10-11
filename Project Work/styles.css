@@ -1,0 +1,38 @@
+body {
+  font-family: 'PT Sans Narrow', sans-serif;
+  background-color: #263145;
+  color: #f2fdff;
+}
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.accountLinks {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav {
+  flex: 1;
+  justify-content: space-between;
+}
+
+.navItem {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.mainLogo-container {
+  display: flex;
+  flex-direction: column;
+  flex:8;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.mainLogo {
+  height: 30%;
+}
