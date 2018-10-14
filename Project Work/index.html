@@ -10,18 +10,35 @@
 </head>
 
 <body>
-  <nav class="flex-container">
+
+<header>
+  <nav class="flex-container-row">
     <div class="navItem">Logo</div>
     <div class="accountLinks">
-      <div class="navItem">Login</div>
-      <div class="navItem">Sign Up</div>
+      <button type="button" class="navItem btn btn-sm">Login</button>
+      <button type="button" class="navItem btn btn-sm">Sign Up</button>
     </div>
   </nav>
+</header>
 
+<main>
+  <div class="flex-container-col search">
     <div class="flex-container mainLogo-container">
       <img class="mainLogo" src="Resources/Logos/LogoWhite.svg" alt="Watchlist Logo"/>
     </div>
 
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Enter any movie or tv show..." aria-label="Search" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn pink" type="button">Search</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>footer</p>
+</footer>
 
   <!-- Connect to JQuery (Bootstrap Dependency) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

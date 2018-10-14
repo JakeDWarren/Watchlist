@@ -1,12 +1,48 @@
-body {
+html, body {
+  display:flex;
+  flex-flow: column;
   font-family: 'PT Sans Narrow', sans-serif;
   background-color: #263145;
+  /*background: radial-gradient(#676e7c, #263145  50%);*/
   color: #f2fdff;
+  justify-content: space-between;
+  height: 100%;
+  width: auto;
 }
 
-.flex-container {
+header{
+  display: flex;
+  flex-flow: column wrap;
+  flex: 1;
+}
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+  flex: 5;
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  display: flex;
+  flex-flow: column wrap;
+  flex: 4;
+}
+
+.flex-container-row {
   display: flex;
   flex-flow: row wrap;
+}
+
+.flex-container-col{
+  display: flex;
+  flex-flow: column wrap;
+}
+
+nav {
+  justify-content: space-between;
+
 }
 
 .accountLinks {
@@ -14,25 +50,64 @@ body {
   justify-content: flex-end;
 }
 
-nav {
-  flex: 1;
-  justify-content: space-between;
-}
-
 .navItem {
-  padding-left: 5px;
-  padding-right: 5px;
+  margin: 5px;
 }
 
 .mainLogo-container {
   display: flex;
   flex-direction: column;
-  flex:8;
   justify-content: center;
   align-items: center;
-
 }
 
 .mainLogo {
-  height: 30%;
+  width: 200%;
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  height: auto;
+  width: 150%;
+  height: auto;
+}
+
+/*Button backgorund set to theme white*/
+.btn {
+  background-color:#f2fdff;
+}
+
+/*Outer glow on bootstrap buttons and form fields set to theme blue*/
+.btn:focus,.btn:active,textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  border-color: #53d8fb;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #53d8fb;
+  outline: 0 none;
+}
+
+/*Shortcut to to apply background of theme pink*/
+.pink{
+  background-color: #ee4266;
+}
+
+/*Make search section flex*/
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
