@@ -2,8 +2,7 @@ html, body {
   display:flex;
   flex-flow: column;
   font-family: 'PT Sans Narrow', sans-serif;
-  background-color: #263145;
-  /*background: radial-gradient(#676e7c, #263145  50%);*/
+  background: radial-gradient(#676e7c, #263145  50%);
   color: #f2fdff;
   justify-content: space-between;
   height: 100%;
