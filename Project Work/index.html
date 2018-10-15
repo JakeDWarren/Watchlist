@@ -28,9 +28,9 @@
     </div>
 
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Enter any movie or tv show..." aria-label="Search" aria-describedby="basic-addon2">
+      <input id="txtsearch" type="text" class="form-control" placeholder="Enter any movie or tv show..." aria-label="Search" aria-describedby="basic-addon2">
       <div class="input-group-append">
-        <button class="btn pink" type="button">Search</button>
+        <button id='btnsearch' class="btn pink" type="button">Search</button>
       </div>
     </div>
   </div>
@@ -45,7 +45,17 @@
   <!-- Connect to Bootstrap -->
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <!-- Link to JavaScript -->
+  <script data-main="script" src="require.js" ></script>
   <script src="script.js" type="javascript"></script>
+  <script type="text/javascript">
+    var searchFunction = document.getElementById('btnsearch');
+      searchFunction.onclick = function(){
+          var script = document.createElement("script");
+          script.src="test.js";
+          document.getElementsByTagName("head")[0].appendChild(script);
+          return false;
+      }
+    </script>
 </body>
 
 </html>
