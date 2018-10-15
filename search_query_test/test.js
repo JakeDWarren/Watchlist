@@ -40,7 +40,7 @@ function print_result(name, result)
 (async function(){
 	var justwatch = new JustWatch();
 
-	var searchResult = await justwatch.search({query: 'Thor'});
+	var searchResult = await justwatch.search({query: 'John'});
 	print_result("search", searchResult);
 
 	var episodes = await justwatch.getEpisodes(searchResult.items[0].id);
@@ -53,4 +53,3 @@ function print_result(name, result)
 
 
 })();
-//console.log(JSON.stringify(print_result);
