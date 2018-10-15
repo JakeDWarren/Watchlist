@@ -3,9 +3,11 @@ const JustWatch = require('./');
 var express = require("express");
 var app = express();
 var port = 3001;
+// let NodeMonkey = require('node-monkey');
+// NodeMonkey()
 
 app.get("/", (req, res) => {
-  res.send("yikes");
+  res.send("oh no");
 });
 
 app.listen(port, () => {
@@ -23,11 +25,12 @@ function print_result(name, result)
 (async function(){
 	var justwatch = new JustWatch();
 
-	var searchResult = await justwatch.search({query: 'Thor'});
+	var searchResult = await justwatch.search({query: 'Hannibal'});
 	print_result("search", searchResult);
 
 	var episodes = await justwatch.getEpisodes(searchResult.items[0].id);
 	print_result("episodes", episodes);
 
-	console.log(searchResult);
+
 })();
+//console.log(JSON.stringify(print_result);
