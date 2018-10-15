@@ -1,14 +1,29 @@
 
 const JustWatch = require('./');
-var express = require("express");
-var app = express();
-var port = 3001;
-// let NodeMonkey = require('node-monkey');
-// NodeMonkey()
+const fetch = require('node-fetch');
+const express = require('express');
+const app = express();
+const port = 3001;
+const MongoClient = require('mongodb').MongoClient;
+const url = "mongodb://localhost:27017/WatchList";
 
-app.get("/", (req, res) => {
+
+
+app.get('/retrievedata', req, res) => {
+  fetch(print_result);
+  .then(res => res.json())
+  .then(json => console.log(json));
+}
+
+app.get('/', (req, res) => {
   res.send("oh no");
 });
+
+MongoClient.connect(url, function(err, db){
+  if (err) throw err;
+  console.log("Database created");
+  db.close();
+})
 
 app.listen(port, () => {
   console.log("server listening on port" + port);
