@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <script src="test.js"></script>
+  <body>
+    <h1>This is a heading</h1>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-12">
+          <form method='post' action='/search'>
+              <input type="text" id="userSearch" name='name' class="form-control" placeholder="Search">
+              <button id="link" type='submit'>Search</button>
+          </form>
+          <hr>
+          <div class="cleanedData"></div>
+        </div>
+      </div>
+    </div>
+    <script>
+    document.querySelector('#link').addEventListener('click', function (event) {
+      event.preventDefault()
+      console.log("clicked it!")
+      const name = document.getElementById('userSearch').value;
+      fetch('/search', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: name
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(response => response.json()).then(console.log)
+    })
+    // function userSearch(event){
+    //   event.preventDefault();
+    //   console.log("caught event")
+    //   document.getElementById('userSearch').value;
+    // }
+    </script>
+  </body>
+</html>

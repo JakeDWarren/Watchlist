@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!-- PT Sans Narrow Font -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Watchlist</title>
+</head>
+<script src="test.js"></script>
+<body>
+
+<header>
+  <nav class="flex-container-row">
+    <div class="navItem">Logo</div>
+    <div class="accountLinks">
+      <button type="button" onclick="window.location.href='../Account/public/index.html'" class="navItem btn btn-sm">Account</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="flex-container-col search">
+    <div class="flex-container mainLogo-container">
+      <img class="mainLogo" src="Resources/Logos/LogoWhite.svg" alt="Watchlist Logo"/>
+    </div>
+    <div class="input-group">
+      <form method='post' action='/search'>
+        <input id="userSearch" type="text" name='name' class="form-control" placeholder="Enter any movie or tv show..." aria-label="Search" aria-describedby="basic-addon2">
+          <div class ="input-group-append">
+            <button id="link" class="btn pink" type="submit">Search</button>
+          </div>
+      </form>
+      </div>
+    </div>
+</main>
+<script>
+document.querySelector('#link').addEventListener('click', function (event) {
+  event.preventDefault()
+  console.log("clicked it")
+  const name = document.getElementById('userSearch').value;
+  fetch('/search', {
+    method: 'POST',
+    body: JSON.stringify({
+      name: name
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then(response => response.json()).then(console.log)
+})
+</script>
+<footer>
+  <div class="flex-container-row flex-centre flex-footer">
+    <img class="platformImage ml-4 mr-4" src="/Resources/PlatformLogos/Netflix.png" alt="Netflix Logo">
+    <img class="platformImage ml-4 mr-4" src="Resources/PlatformLogos/Amazon Prime White.png" alt="Amazon Prime Video Logo">
+    <img class="platformImage ml-4 mr-4" src="Resources/PlatformLogos/NOW TV.png" alt="NOW TV Logo">
+    <img class="platformImage ml-4 mr-4" src="Resources/PlatformLogos/Google Play.png" alt="Google Play Logo">
+    <img class="platformImage ml-4 mr-4" src="Resources/PlatformLogos/iTunes Logo White.png" alt="Itunes Logo">
+    <img class="platformImage" src="Resources/PlatformLogos/Sky TV.png" alt="Sky TV Logo">
+  </div>
+</footer>
+
+  <!-- Connect to JQuery (Bootstrap Dependency) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Connect to Bootstrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <!-- Link to JavaScript -->
+  <script data-main="script" src="require.js" ></script>
+
+</body>
+</html>
